@@ -55,8 +55,7 @@ for svc in services:
     lines += [f"  - name: s24/{svc}",
               f"    newName: {registry}/{project}/{svc}",
               f'    newTag: "{tag if svc in built or svc not in current else current[svc]}"']
-open(path, "w", encoding="utf-8", newline="
-").write("\n".join(lines) + "\n")
+open(path, "w", encoding="utf-8", newline="\n").write("\n".join(lines) + "\n")
 print(f"updated {path}")
 PY
 
